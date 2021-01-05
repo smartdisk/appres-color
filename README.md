@@ -1,5 +1,6 @@
 # Color for HEX and JSON
 
+```
 const color = require('@appres/color');
 
 let color_val = color.hex("#F0F");
@@ -29,4 +30,4 @@ let color_json = color.json(0xff00ff, 0x7f);
 let color_json = color.json(255, 0, 255);
 let color_json = color.json(255, 0, 255, 127);
 let color_json = color.json(255, 0, 255, 0.5);
-
+```

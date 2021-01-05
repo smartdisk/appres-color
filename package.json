@@ -1,6 +1,6 @@
 {
   "name": "@appres/color",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Color HEX and JSON",
   "main": "index.js",
   "scripts": {
