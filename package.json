@@ -1,0 +1,11 @@
+{
+  "name": "@appres/color",
+  "version": "0.0.0",
+  "description": "Color HEX and JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "APPRES.ORG",
+  "license": "MIT"
+}
