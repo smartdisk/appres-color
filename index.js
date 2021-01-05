@@ -226,5 +226,6 @@ Color.prototype.json = function(val) {
 }
 
 
+
 const color = new Color();
 module.exports = color;
