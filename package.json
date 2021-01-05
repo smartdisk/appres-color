@@ -1,7 +1,7 @@
 {
   "name": "@appres/color",
-  "version": "0.0.2",
-  "description": "Color HEX and JSON",
+  "version": "0.0.3",
+  "description": "Value and JSON for the Color",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

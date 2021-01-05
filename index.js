@@ -217,9 +217,12 @@ const _color = (r, g, b, a) => {
 Color.prototype.hex = function(r, g, b, a) {
     return _color(r, g, b, a);
 }
-Color.prototype.json = function(hex) {
-    if(isString(hex) && hex.charAt(0)==='#') return _hex2rgba(hex);
-    return _hex2rgba("#" + this.hex(hex));
+Color.prototype.val = function(r, g, b, a) {
+    return _color(r, g, b, a);
+}
+Color.prototype.json = function(val) {
+    if(isString(val) && val.charAt(0)==='#') return _hex2rgba(hex);
+    return _hex2rgba("#" + this.hex(val));
 }
 
 
