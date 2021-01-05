@@ -1,11 +1,16 @@
 {
   "name": "@appres/color",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Color HEX and JSON",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartdisk/appres-color.git"
+  },
+  "homepage": "https://appres.org",
   "author": "APPRES.ORG",
   "license": "MIT"
 }
