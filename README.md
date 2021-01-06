@@ -1,8 +1,14 @@
 # Value and JSON for the Color
 
+# Install
+```
+npm i @appres/color
+```
+
 ## Import
 ```
 const color = require('@appres/color');
+
 ```
 
 ## Usage
