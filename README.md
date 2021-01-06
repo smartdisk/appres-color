@@ -8,10 +8,14 @@ const color = require('@appres/color');
 ## Uses
 ```
 function:
-    color.hex({"#color"});
-    color.hex({value});
-    color.hex({r}, {g}, {g});
-    color.hex({r}, {g}, {g}, {a});
+    color.val({"#color"});
+    color.val({value});
+    color.val({value},{a});
+    color.val({value},{alpha});
+    color.val({r}, {g}, {b});
+    color.val({r}, {g}, {b}, {a});
+    color.val({r}, {g}, {b}, {alpha});
+    color.val({json});
 
 return:
     number type

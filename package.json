@@ -1,6 +1,6 @@
 {
   "name": "@appres/color",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Value and JSON for the Color",
   "main": "index.js",
   "scripts": {
