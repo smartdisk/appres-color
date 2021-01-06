@@ -221,7 +221,7 @@ Color.prototype.val = function(r, g, b, a) {
     return _color(r, g, b, a);
 }
 Color.prototype.json = function(val) {
-    if(isString(val) && val.charAt(0)==='#') return _hex2rgba(hex);
+    if(isString(val) && val.charAt(0)==='#') return _hex2rgba(val);
     return _hex2rgba("#" + this.hex(val));
 }
 
