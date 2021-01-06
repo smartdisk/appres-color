@@ -1,6 +1,6 @@
 {
   "name": "@appres/color",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Value and JSON for the Color",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,9 @@
   },
   "homepage": "https://appres.org",
   "author": "APPRES.ORG",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "appres",
+    "color"
+  ]
 }
