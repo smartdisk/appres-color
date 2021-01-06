@@ -24,6 +24,16 @@ function isNumber(value) {
     }
     return true
 }
+function decimalToHex(d, padding) {
+    var hex = Number(d).toString(16);
+    padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
+
+    while (hex.length < padding) {
+        hex = "0" + hex;
+    }
+    return hex;
+}
+
 
 class Color { }
 
@@ -80,15 +90,7 @@ const _rgba2val = (r, g, b, a) => {
     if(a>0xFF) a = 0xFF;
     return r*0x1000000 + g*0x10000 + b*0x100 + a;
 }
-//_color("#RGB")
-//_color("#RGB", 0.5)
-//_color("#RRGGBB")
-//_color("#RRGGBB", 0.5)
-//_color("#RRGGBBAA")
-//_color(0xFF00FF7F)
-//_color(0xFF00FF, 0.5)
-//_color(255,0,255,127)
-//_color(255,0,255)  => a set to 255
+
 const _color = (r, g, b, a) => {
     if(r==null) return null;
 
@@ -165,7 +167,7 @@ const _color = (r, g, b, a) => {
 
     if(r instanceof Object || isString(r)) {   // json r.g.b with alpha
         if(r.toString().charAt(0)=='#') {
-            if(g==null) {
+            if(b==null) {
                 if(r.length==4) {
                     let c = _shex2rgb(r);
                     if(g!=null) {
@@ -200,12 +202,17 @@ const _color = (r, g, b, a) => {
     }
     else
     if(r!=null && g==null) {    // 0xRRGGBBAA
+        if(r<0x1000000) {
+            r = r * 0x100 + 0xff;
+        }
         return r;
     }
     else
     if(r!=null && g!=null && b==null) {    // 0xRRGGBB, alpha
         if(isFloat(g)) {
             a = Math.round(g*255) || 0x00;
+        } else {
+            a = g;
         }
         if(a>0xFF) a = 0xFF;
         if(a<0) a = 0;
@@ -220,12 +227,66 @@ Color.prototype.hex = function(r, g, b, a) {
 Color.prototype.val = function(r, g, b, a) {
     return _color(r, g, b, a);
 }
-Color.prototype.json = function(val) {
-    if(isString(val) && val.charAt(0)==='#') return _hex2rgba(val);
-    return _hex2rgba("#" + this.hex(val));
+Color.prototype.json = function(r, g, b, a) {
+    let v = _color(r, g, b, a);
+    return _hex2rgba("#" + decimalToHex(v, v < 0x1000000 ? 6 : 8));
 }
 
 
 
 const color = new Color();
 module.exports = color;
+
+function func(func) {
+    let r = eval(func);
+    if(isObject(r)) {
+        r = JSON.stringify(r);
+    } else {
+        r = "0x" + decimalToHex(r, 8);
+    }
+    console.log(func + ";\t// " + r);
+}
+
+function test() {
+    func('color.val("#F0F")');
+    func('color.val("#F0F", 0.5)');
+    func('color.val("#F0F7")');
+    func('color.val("#FF00FF")');
+    func('color.val("#FF00FF", 0.5)');
+    func('color.val("#FF00FF7F")');
+    func('color.val(0xff00ff)');
+    func('color.val(0xff00ff7f)');
+    func('color.val(0xff00ff, 0.5)');
+    func('color.val(0xff00ff, 0x7f)');
+    func('color.val(255, 0, 255)');
+    func('color.val(255, 0, 255, 127)');
+    func('color.val(255, 0, 255, 0.5)');
+    func('color.val(0xff, 0x00, 0xff)');
+    func('color.val(0xff, 0x00, 0xff, 0x7f)');
+    func('color.val(0xff, 0x00, 0xff, 0.5)');
+    func('color.val({r: 255, g: 0, b: 255, a: 127})');
+    func('color.val({r: 0xff, g: 0x00, b: 0xff, a: 0x7f})');
+    func('color.val({r: 255, g: 0, b: 255, alpha: 0.5})');
+    func('color.val({r: 0xff, g: 0x00, b: 0xff, alpha: 0.5})');
+
+
+    func('color.json("#F0F")');
+    func('color.json("#F0F", 0.5)');
+    func('color.json("#F0F7")');
+    func('color.json("#FF00FF")');
+    func('color.json("#FF00FF", 0.5)');
+    func('color.json("#FF00FF7F")');
+    func('color.json(0xff00ff)');
+    func('color.json(0xff00ff7f)');
+    func('color.json(0xff00ff, 0.5)');
+    func('color.json(0xff00ff, 0x7f)');
+    func('color.json(255, 0, 255)');
+    func('color.json(255, 0, 255, 127)');
+    func('color.json(255, 0, 255, 0.5)');
+    func('color.json(0xff, 0x00, 0xff)');
+    func('color.json(0xff, 0x00, 0xff, 0x7f)');
+    func('color.json(0xff, 0x00, 0xff, 0.5)');
+    func('color.json(4278255487)');
+}
+
+// test();
