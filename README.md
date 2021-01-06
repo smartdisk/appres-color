@@ -5,7 +5,7 @@
 const color = require('@appres/color');
 ```
 
-## Uses
+## Usage
 ```
 function: val
     color.val({"#color"});
@@ -25,8 +25,6 @@ return:
                 0xff00ff7f
             as decimal
                 4278255487
-
-
 
 
 function: json
