@@ -192,12 +192,14 @@ const _color = (r, g, b, a) => {
                 }
             }
         } else {
-            r = r.r || 0;    
-            g = r.g || 0;
-            b = r.b || 0;
             if(r.a!==null) a = r.a;
-            else if(r.alpha!==null) a = Math.round(r.alpha*255);
+            else 
+            if(r.alpha!==null) a = Math.round(r.alpha*255);
             else a = 0xFF;
+
+            b = r.b || 0;
+            g = r.g || 0;
+            r = r.r || 0;    
         }
     }
     else

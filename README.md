@@ -52,7 +52,6 @@ return:
 
 ## Samples
 ```
-
 color.val("#F0F");      // 0xff00ffff
 color.val("#F0F", 0.5); // 0xff00ff80
 color.val("#F0F7");     // 0xff00ff77
@@ -69,11 +68,10 @@ color.val(255, 0, 255, 0.5);    // 0xff00ff80
 color.val(0xff, 0x00, 0xff);    // 0xff00ffff
 color.val(0xff, 0x00, 0xff, 0x7f);      // 0xff00ff7f
 color.val(0xff, 0x00, 0xff, 0.5);       // 0xff00ff80
-color.val({r: 255, g: 0, b: 255, a: 127});      // 0xff0000ff
-color.val({r: 0xff, g: 0x00, b: 0xff, a: 0x7f});        // 0xff0000ff
-color.val({r: 255, g: 0, b: 255, alpha: 0.5});  // 0xff0000ff
-color.val({r: 0xff, g: 0x00, b: 0xff, alpha: 0.5});     // 0xff0000ff
-
+color.val({r: 255, g: 0, b: 255, a: 127});      // 0xff00ff7f
+color.val({r: 0xff, g: 0x00, b: 0xff, a: 0x7f});        // 0xff00ff7f
+color.val({r: 255, g: 0, b: 255, alpha: 0.5});  // 0xff00ffff
+color.val({r: 0xff, g: 0x00, b: 0xff, alpha: 0.5});     // 0xff00ffff
 
 color.json("#F0F");     // {"r":255,"g":0,"b":255,"a":255}
 color.json("#F0F", 0.5);        // {"r":255,"g":0,"b":255,"a":128}
