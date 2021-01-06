@@ -250,6 +250,10 @@ function func(func) {
 }
 
 function test() {
+    func('color.val("red")');
+    func('color.val("lightred")');
+    func('color.val("darkred")');
+
     func('color.val("#F0F")');
     func('color.val("#F0F", 0.5)');
     func('color.val("#F0F7")');
@@ -272,6 +276,10 @@ function test() {
     func('color.val({r: 0xff, g: 0x00, b: 0xff, alpha: 0.5})');
 
 
+    func('color.json("red")');
+    func('color.json("lightred")');
+    func('color.json("darkred")');
+    
     func('color.json("#F0F")');
     func('color.json("#F0F", 0.5)');
     func('color.json("#F0F7")');

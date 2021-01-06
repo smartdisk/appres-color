@@ -14,13 +14,14 @@ const color = require('@appres/color');
 ## Usage
 ```
 function: val
-    color.val({"#color"});
-    color.val({value});
-    color.val({value},{a});
-    color.val({value},{alpha});
-    color.val({r}, {g}, {b});
-    color.val({r}, {g}, {b}, {a});
-    color.val({r}, {g}, {b}, {alpha});
+    color.val("color name");
+    color.val("#color");
+    color.val(value);
+    color.val(value, a);
+    color.val(value, alpha);
+    color.val(r, g, b);
+    color.val(r, g, b, a);
+    color.val(r, g, b, alpha);
     color.val({json});
 
 return:
@@ -34,13 +35,14 @@ return:
 
 
 function: json
-    color.json({"#color"});
-    color.json({value});
-    color.json({value},{a});
-    color.json({value},{alpha});
-    color.json({r}, {g}, {b});
-    color.json({r}, {g}, {b}, {a});
-    color.json({r}, {g}, {b}, {alpha});
+    color.json("color name");
+    color.json("#color");
+    color.json(value);
+    color.json(value, a);
+    color.json(value, alpha);
+    color.json(r, g, b);
+    color.json(r, g, b, a);
+    color.json(r, g, b, alpha);
 
 return:
     type:   json
@@ -54,8 +56,50 @@ return:
 
 ```
 
+## color name
+```
+    lightred
+    red	
+    darkred
+
+    lightgreen
+    green
+    darkgreen
+
+    lightblue
+    blue	
+    darkblue    
+
+    lightyellow	
+    yellow	
+    darkyellow	
+
+    white 
+    black	    
+    
+    silver	    
+
+    lightgray	
+    gray	
+    darkgray	
+    
+    maroon    
+    olive	
+    lime        
+    aqua	
+    teal
+    navy	
+    fuchsia	
+    purple
+
+```
+
 ## Samples
 ```
+color.val("red");       // 0xac0000ff
+color.val("lightred");  // 0xff0000ff
+color.val("darkred");   // 0x640000ff
+
 color.val("#F0F");      // 0xff00ffff
 color.val("#F0F", 0.5); // 0xff00ff80
 color.val("#F0F7");     // 0xff00ff77
@@ -76,6 +120,10 @@ color.val({r: 255, g: 0, b: 255, a: 127});      // 0xff00ff7f
 color.val({r: 0xff, g: 0x00, b: 0xff, a: 0x7f});        // 0xff00ff7f
 color.val({r: 255, g: 0, b: 255, alpha: 0.5});  // 0xff00ffff
 color.val({r: 0xff, g: 0x00, b: 0xff, alpha: 0.5});     // 0xff00ffff
+
+color.json("red");      // {"r":172,"g":0,"b":0,"a":255}
+color.json("lightred"); // {"r":255,"g":0,"b":0,"a":255}
+color.json("darkred");  // {"r":100,"g":0,"b":0,"a":255}
 
 color.json("#F0F");     // {"r":255,"g":0,"b":255,"a":255}
 color.json("#F0F", 0.5);        // {"r":255,"g":0,"b":255,"a":128}
