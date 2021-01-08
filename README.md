@@ -9,6 +9,10 @@ npm i @appres/color
 ```
 const color = require('@appres/color');
 
+or 
+
+import { color } from '@appres/color';
+
 ```
 
 ## Usage
