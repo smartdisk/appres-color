@@ -260,7 +260,7 @@ module.exports.Color = Color;
 
 /*
 // example code
-let color = new Color();
+// let Color = new Color();
 function func(func) {
     let r = eval(func);
     if(isObject(r)) {
@@ -272,53 +272,53 @@ function func(func) {
 }
 
 function test() {
-    func('color.val("red")');
-    func('color.val("lightred")');
-    func('color.val("darkred")');
+    func('Color.val("red")');
+    func('Color.val("lightred")');
+    func('Color.val("darkred")');
 
-    func('color.val("#F0F")');
-    func('color.val("#F0F", 0.5)');
-    func('color.val("#F0F7")');
-    func('color.val("#FF00FF")');
-    func('color.val("#FF00FF", 0.5)');
-    func('color.val("#FF00FF7F")');
-    func('color.val(0xff00ff)');
-    func('color.val(0xff00ff7f)');
-    func('color.val(0xff00ff, 0.5)');
-    func('color.val(0xff00ff, 0x7f)');
-    func('color.val(255, 0, 255)');
-    func('color.val(255, 0, 255, 127)');
-    func('color.val(255, 0, 255, 0.5)');
-    func('color.val(0xff, 0x00, 0xff)');
-    func('color.val(0xff, 0x00, 0xff, 0x7f)');
-    func('color.val(0xff, 0x00, 0xff, 0.5)');
-    func('color.val({r: 255, g: 0, b: 255, a: 127})');
-    func('color.val({r: 0xff, g: 0x00, b: 0xff, a: 0x7f})');
-    func('color.val({r: 255, g: 0, b: 255, alpha: 0.5})');
-    func('color.val({r: 0xff, g: 0x00, b: 0xff, alpha: 0.5})');
+    func('Color.val("#F0F")');
+    func('Color.val("#F0F", 0.5)');
+    func('Color.val("#F0F7")');
+    func('Color.val("#FF00FF")');
+    func('Color.val("#FF00FF", 0.5)');
+    func('Color.val("#FF00FF7F")');
+    func('Color.val(0xff00ff)');
+    func('Color.val(0xff00ff7f)');
+    func('Color.val(0xff00ff, 0.5)');
+    func('Color.val(0xff00ff, 0x7f)');
+    func('Color.val(255, 0, 255)');
+    func('Color.val(255, 0, 255, 127)');
+    func('Color.val(255, 0, 255, 0.5)');
+    func('Color.val(0xff, 0x00, 0xff)');
+    func('Color.val(0xff, 0x00, 0xff, 0x7f)');
+    func('Color.val(0xff, 0x00, 0xff, 0.5)');
+    func('Color.val({r: 255, g: 0, b: 255, a: 127})');
+    func('Color.val({r: 0xff, g: 0x00, b: 0xff, a: 0x7f})');
+    func('Color.val({r: 255, g: 0, b: 255, alpha: 0.5})');
+    func('Color.val({r: 0xff, g: 0x00, b: 0xff, alpha: 0.5})');
 
 
-    func('color.json("red")');
-    func('color.json("lightred")');
-    func('color.json("darkred")');
+    func('Color.json("red")');
+    func('Color.json("lightred")');
+    func('Color.json("darkred")');
     
-    func('color.json("#F0F")');
-    func('color.json("#F0F", 0.5)');
-    func('color.json("#F0F7")');
-    func('color.json("#FF00FF")');
-    func('color.json("#FF00FF", 0.5)');
-    func('color.json("#FF00FF7F")');
-    func('color.json(0xff00ff)');
-    func('color.json(0xff00ff7f)');
-    func('color.json(0xff00ff, 0.5)');
-    func('color.json(0xff00ff, 0x7f)');
-    func('color.json(255, 0, 255)');
-    func('color.json(255, 0, 255, 127)');
-    func('color.json(255, 0, 255, 0.5)');
-    func('color.json(0xff, 0x00, 0xff)');
-    func('color.json(0xff, 0x00, 0xff, 0x7f)');
-    func('color.json(0xff, 0x00, 0xff, 0.5)');
-    func('color.json(4278255487)');
+    func('Color.json("#F0F")');
+    func('Color.json("#F0F", 0.5)');
+    func('Color.json("#F0F7")');
+    func('Color.json("#FF00FF")');
+    func('Color.json("#FF00FF", 0.5)');
+    func('Color.json("#FF00FF7F")');
+    func('Color.json(0xff00ff)');
+    func('Color.json(0xff00ff7f)');
+    func('Color.json(0xff00ff, 0.5)');
+    func('Color.json(0xff00ff, 0x7f)');
+    func('Color.json(255, 0, 255)');
+    func('Color.json(255, 0, 255, 127)');
+    func('Color.json(255, 0, 255, 0.5)');
+    func('Color.json(0xff, 0x00, 0xff)');
+    func('Color.json(0xff, 0x00, 0xff, 0x7f)');
+    func('Color.json(0xff, 0x00, 0xff, 0.5)');
+    func('Color.json(4278255487)');
 }
 test();
 */
