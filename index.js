@@ -93,6 +93,7 @@ var Color = /** @class */ (function () {
         }
         if(a<0) a = 0;
         if(a>0xFF) a = 0xFF;
+
         return r*0x1000000 + g*0x10000 + b*0x100 + a;
     }
 
@@ -236,6 +237,14 @@ var Color = /** @class */ (function () {
     }
     Color.prototype.json = (r, g, b, a) => {
         let v = _color(r, g, b, a);
+        if(typeof r === "string" && r.charAt(0)=="#") {
+            if(r.length==9) {
+                return _hex2rgba("#" + decimalToHex(v, 8));
+            }
+            if(r.length==7) {
+                return _hex2rgba("#" + decimalToHex(v, 6));
+            }
+        }
         return _hex2rgba("#" + decimalToHex(v, v < 0x1000000 ? 6 : 8));
     }
 
@@ -308,6 +317,9 @@ function test() {
     func('Color.json("#FF00FF")');
     func('Color.json("#FF00FF", 0.5)');
     func('Color.json("#FF00FF7F")');
+    func('Color.json("#00FF00FF")');
+    func('Color.json("#0000FFFF")');
+    func('Color.json("#000000FF")');
     func('Color.json(0xff00ff)');
     func('Color.json(0xff00ff7f)');
     func('Color.json(0xff00ff, 0.5)');
@@ -318,7 +330,8 @@ function test() {
     func('Color.json(0xff, 0x00, 0xff)');
     func('Color.json(0xff, 0x00, 0xff, 0x7f)');
     func('Color.json(0xff, 0x00, 0xff, 0.5)');
-    func('Color.json(4278255487)');
+    func('Color.json(4278255487)');    
+
 }
 test();
 */
